@@ -1,0 +1,87 @@
+.info{
+    padding: 15px;
+}
+
+.container{
+    margin-top:30px;
+}
+
+.nopad{
+    padding:0;
+}
+
+.title{
+    padding:15px;
+    color:green;
+    text-align:center;
+    font-size: 1.4em;
+}
+
+.friends{
+    padding:15px 30px;
+    color:green;
+    text-align:left;
+    font-size: 1.4em;
+    width:100%;
+    margin:10px 0;
+}
+
+.literal{
+    color:green;
+    font-weight: bold;
+}
+
+/* CSS used here will be applied after bootstrap.css */
+
+    .card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+
+  /*
+  Small devices (landscape phones, 34em and up ( 544px ))
+  */
+    @media (min-width: 34em) {
+        .card-columns {
+            -webkit-column-count: 1;
+            -moz-column-count: 1;
+            column-count: 1;
+        }
+        
+    }
+
+  /*
+  Medium devices (tablets, 48em and up (768px))
+  */
+    @media (min-width: 48em) {
+        .card-columns {
+            -webkit-column-count: 2;
+            -moz-column-count: 2;
+            column-count: 2;
+        }
+
+    }
+
+  /* 
+  Large devices (desktops, 62em and up(992px) )
+  */
+    @media (min-width: 62em) {
+        .card-columns {
+            -webkit-column-count: 2;
+            -moz-column-count: 2;
+            column-count: 2;
+        }
+        
+    }
+     
+  /*
+  Extra large devices (large desktops, 75em and up (1200px))
+  */
+    @media (min-width: 75em ) {
+        .card-columns {
+            -webkit-column-count: 2;
+            -moz-column-count: 2;
+            column-count: 2;
+        }
+    }

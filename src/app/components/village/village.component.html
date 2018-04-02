@@ -1,0 +1,17 @@
+<div class="headtext">
+    <h1>These are your gnome neighbours!</h1>
+</div>
+<div *ngIf="isLoading" class="loader"></div>
+<div class="container"
+  infiniteScroll
+  debounce
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="400"
+  (scrolled)="onScroll()">
+  <div class="row">
+      <div class="card-columns">
+            <app-neighbours (cardClick)="neighbourClicked($event)" *ngFor="let item of scrumbles" [neighbour]="item"></app-neighbours>
+      </div>
+  </div>
+  <div *ngIf="noresults"><span class="fas fa-search fa-4x"></span><h3 [ngStyle]="{'margin':'15px'}">NO RESULTS TO SHOW</h3></div>
+</div>

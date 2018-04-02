@@ -1,0 +1,47 @@
+<div>
+  <div class= "custom-container bg-dark jumbotron">
+       
+    <form class="form-horizontal" [formGroup]="loginForm"
+    (ngSubmit)="onFormSubmit()">
+        <fieldset>
+          <legend>Enter Brastlewark</legend>
+         
+            <div class="form-group">
+              <input type="text"
+                formControlName="inputUser"
+                id="inputUser"
+                placeholder="Username">
+            </div>
+            <div *ngIf="loginForm.controls.inputUser.invalid && loginForm.controls.inputUser.touched"
+                class="text-danger">
+ 
+                <div *ngIf = "loginForm.controls.inputUser.errors?.required">
+                    You must enter a username
+                </div>
+ 
+            </div>
+            <div class="form-group">
+              <input type="password"
+              formControlName="inputPassword"
+                id="inputPassword"
+                placeholder="Password">
+            </div>
+            <div *ngIf="loginForm.controls.inputPassword.invalid && loginForm.controls.inputPassword.touched"
+                class="text-danger">
+ 
+                <div *ngIf = "loginForm.controls.inputPassword.errors?.required">
+                    You must enter a password
+                </div>
+ 
+            </div>
+            <div class="form-group">
+                <button *ngIf = "!isLoading" type="submit" class="btn btn-primary">Submit</button>
+                <div class="loader" *ngIf = "isLoading"></div>
+            </div>
+            <div *ngIf = "formError" class="text-danger">
+                Please, enter a valid Username and Password.
+            </div>
+        </fieldset>
+    </form>
+  </div>
+</div>

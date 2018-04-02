@@ -1,0 +1,54 @@
+.upmargin{
+    margin-top:15px;
+}
+
+.mediumw{
+    width:200px;
+}
+
+.smallt{
+    font-size:0.8em;
+}
+
+.maxsized{
+    height: 300px;
+}
+
+.holder{
+    position:relative;
+    text-align: left;
+}
+
+.card img{
+    opacity: 0.7;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+.card:hover{
+    cursor: pointer;
+    opacity: 0.5;
+    filter: alpha(opacity=30); /* For IE8 and earlier */
+}
+
+.overlay{
+    width:100%;
+    position:absolute;
+    top:0;
+    color:white;
+    font:bold;
+    padding:10px;
+    opacity: 1;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+    background: rgb(0, 0, 0); /* fallback color */
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.overlay-inline{
+    display:inline;
+    margin-right:1px;
+    font-size: 0.8em;
+}
+
+.section-inline{
+    display:inline;
+    margin:0 5px;
+}

@@ -1,0 +1,11 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand">Brastlewark</a>
+  <form class="form-inline" [formGroup]="form">
+    <div *ngIf="inListMode">
+      <span class="d-inline fab fa-searchengin fa-2x iconf"></span>      
+      <input class="d-inline form-control" (keyup)="sendFilter($event)" type="text" placeholder="Search" aria-label="Search" formControlName="search">
+    </div>
+    <div (click)="goToList()" *ngIf="!inListMode" ><span class="d-inline fas fa-th-list fa-2x iconlo"></span></div>  
+    <div (click)="logout()"><span class="d-inline fas fa-sign-out-alt fa-2x iconlo"></span></div>    
+  </form>
+</nav>

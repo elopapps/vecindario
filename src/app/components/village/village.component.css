@@ -1,0 +1,58 @@
+@media (min-width: 576px) {
+  .card-columns {
+      column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-columns {
+      column-count: 3;
+  }
+}
+
+@media (min-width: 992px) {
+  .card-columns {
+      column-count: 4;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-columns {
+      column-count: 4;
+  }
+}
+
+:host{
+  text-align:center;
+  color:green;
+}
+
+.headtext{
+  padding:40px 0 40px 0;
+  position:fixed;
+  text-align: center;
+  z-index: 101;
+  width:100%;
+  background-color: white;
+}
+
+.container{
+  margin-top:160px;
+}
+
+.loader {
+  position:relative;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid green; /* Blue */
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 0.7s linear infinite;
+  margin:180px auto;
+  z-index:10000;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

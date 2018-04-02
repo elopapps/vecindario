@@ -1,0 +1,50 @@
+nav{
+    padding:15px 10%;
+    color:green;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index:10;
+    height:100px;
+}
+
+nav input{
+    display:inline;
+}
+
+.iconf{
+    margin-right: 10px;
+    vertical-align: bottom;
+    margin-bottom: 5px;
+}
+
+.iconlo{
+    margin:0 20px;
+    cursor:pointer;
+}
+
+@media only screen and (min-width: 22.9em) { 
+    nav input {
+        
+    }
+}
+@media only screen and (min-width: 33.9em) { 
+    nav input {
+        
+    }
+}
+@media only screen and (min-width: 47.9em) {
+    nav input {
+           
+       }
+   }
+@media only screen and (min-width: 61.9em) {
+    nav input {
+           
+       }
+    }
+@media only screen and (min-width: 74.9em) { 
+    nav input {
+           
+       }
+   }

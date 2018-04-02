@@ -1,0 +1,27 @@
+<!-- <div class="card text-center upmargin">
+  <img class="card-img-top" src="{{ neighbour.thumbnail }}" alt="Card image cap">
+  <div class="card-body text-white bg-dark">
+    <h6 class="card-title">{{ neighbour.name }}</h6>
+    <<a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div> -->
+<div class="card holder" (click)="cardClicked()">
+    <img class="card-img-top" src="{{ neighbour.thumbnail }}" alt="Card image cap">
+    <div class="overlay">
+        <span>{{ neighbour.name }}</span>
+        <div>
+          <div class="section-inline">
+            <span class="overlay-inline fas fa-weight"></span> <p class="overlay-inline">{{ neighbour.weight | number:'2.1-2' }}</p>
+          </div>
+          <div class="section-inline">
+            <span class="overlay-inline fas fa-circle" [style.color]="[neighbour.hair_color]"></span>
+          </div>
+          <div class="section-inline">
+            <span class="overlay-inline fas fa-users"></span> <p class="overlay-inline">{{ neighbour.friends.length }}</p>
+          </div>    
+          <div class="section-inline">
+            <span class="overlay-inline fas fa-briefcase"></span> <p class="overlay-inline">{{ neighbour.professions.length }}</p>
+          </div>    
+        </div>
+    </div>
+</div>
