@@ -6,7 +6,7 @@ export class Neighbour {
     hair_color?:string;
     height?:number;
     weight?:number;
-    professions:string[];
+    professions?:string[];
     thumbnail?:string;
 
     constructor(values: Object = {}){

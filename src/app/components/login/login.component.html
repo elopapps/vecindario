@@ -35,7 +35,7 @@
  
             </div>
             <div class="form-group">
-                <button *ngIf = "!isLoading" type="submit" class="btn btn-primary">Submit</button>
+                <button *ngIf = "!isLoading" id="log" type="submit" class="btn btn-primary">Submit</button>
                 <div class="loader" *ngIf = "isLoading"></div>
             </div>
             <div *ngIf = "formError" class="text-danger">

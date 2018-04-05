@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FilterService } from '../../services/filter.service';
 import { LoginService } from '../../services/login.service';
 import { ActivatedRoute, Router } from "@angular/router";
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import 'rxjs/add/operator/debounceTime';
 
 @Component({
   selector: 'app-header',
@@ -15,6 +16,7 @@ export class HeaderComponent implements OnInit {
   private filterActive:boolean = false;
   private form: FormGroup;
   private inListMode:boolean = true;
+  private formCtrlSub:Subscription;
 
   constructor(private filterService: FilterService, private activatedRoute: ActivatedRoute, private fb:FormBuilder, 
               private loginService:LoginService, private router:Router) {
@@ -27,12 +29,15 @@ export class HeaderComponent implements OnInit {
       this.activatedRoute.url.subscribe(url =>{
           this.inListMode = (this.activatedRoute.snapshot["_routerState"].url=="/loggedin/village");
       });
+
+      // send message to subscribers via observable subject
+      this.formCtrlSub = this.form.controls["search"].valueChanges
+        .debounceTime(500)
+        .subscribe(newValue => this.filterService.sendTerm(newValue));
   }
 
   sendFilter(search){
-      // send message to subscribers via observable subject
-      this.filterService.sendTerm(search.target.value);
-      console.log("FILTER SEARCH ON HEADER: ", search);
+
   }
 
   clearFilter(): void {

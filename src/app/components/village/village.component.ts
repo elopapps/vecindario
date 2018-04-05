@@ -51,7 +51,6 @@ export class VillageComponent implements OnInit {
     //Subscribe to filter subject
     this.subscription = this.filterServ.getTerm().subscribe(message => { 
       this.filter = message.text; 
-      console.log("FILTER RECEIVED ON TARGET COMPONENT : ", this.filter);
       this.filterGnomes();
      
     });
@@ -60,12 +59,15 @@ export class VillageComponent implements OnInit {
 
   filterGnomes(){
     /***** Filters by name, hair color and profession *****/
+      window.scrollTo(0, 0);
+
       this.loadGnomesFromCache();
       if(this.filter !== ""){
           let filterByName:Neighbour[] = [...this.people].filter(gnome => gnome.name.toUpperCase().indexOf(this.filter.toUpperCase()) > -1);
           let filterByHairColor:Neighbour[] = [...this.people].filter(gnome => gnome.hair_color.toUpperCase().indexOf(this.filter.toUpperCase()) > -1);
           let filterByProfession:Neighbour[] = [...this.people].filter(gnome => gnome.professions.join().toUpperCase().indexOf(this.filter.toUpperCase()) > -1);
           this.people = [...filterByName, ...filterByHairColor, ...filterByProfession];
+
           this.scrumbleGnomes(0);
           
       }
