@@ -8,6 +8,8 @@ import { Router } from "@angular/router";
 @Injectable()
 export class LoginService {
 
+    /*** MOCK API FOR LOGIN PURPOSES ***/
+
     private endpoint:string = "/api/users";
     private isLoggedIn = new Subject<boolean>();
 
@@ -54,7 +56,10 @@ export class LoginService {
 
     logOut(){
         this.isLoggedIn.next(false);
+        /** Clean cache items. Clean logged info and Gnomes too **/
         localStorage.setItem('loggedIn', JSON.stringify(false));
+        localStorage.setItem("peopleById", JSON.stringify([])); 
+        localStorage.setItem("peopleByName", JSON.stringify({})); 
         this.router.navigate(['']);
     }
 

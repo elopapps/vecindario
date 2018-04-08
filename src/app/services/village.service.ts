@@ -10,6 +10,7 @@ export class VillageService {
 
   constructor(private http:HttpClient) { }
   
+  /** Fecth gnomes from server **/
   getItems():Observable<Village>{
       return this.http.get<Village>(this.endpoint);
   }

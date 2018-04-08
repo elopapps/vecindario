@@ -9,6 +9,7 @@ export class FilterService {
 
   constructor() { }
 
+  //Get filter term changes from header
   sendTerm(message: string) {
       this.subject.next({ text: message });
   }
@@ -17,6 +18,7 @@ export class FilterService {
       this.subject.next();
   }
 
+  //Send filter term to consumer (VillageComponent)
   getTerm(): Observable<any> {
       return this.subject.asObservable();
   }

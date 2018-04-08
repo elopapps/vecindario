@@ -6,7 +6,10 @@ export class MemoryService {
 
   constructor() { }
 
+  /** MANAGE CACHE ITEMS**/
+
   saveGnomes(items:Neighbour[]){
+      /** Save gnomes. Saved mapped by name to eadily acces friends info **/
       const arrayToObjectId = (array) =>
       array.reduce((obj, item) => {
         obj[item.id] = item
@@ -32,6 +35,7 @@ export class MemoryService {
   }
 
   private getGnomesMapedName():Object{
+    /** Get gnomes by name to get friends **/
     let peopleObject:Object = JSON.parse(localStorage.getItem("peopleByName"));
     return peopleObject;
   }
@@ -79,6 +83,7 @@ export class MemoryService {
   }
 
   getLastTime():number{
+      /** Last time accessing the cahche **/
       return JSON.parse(localStorage.getItem("current-date")) || null;
   }
 }

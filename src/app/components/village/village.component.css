@@ -56,3 +56,29 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+@media only screen and (min-width: 22.9em) { 
+  .headtext h1{
+      font-size: 1.6em;
+  }
+}
+@media only screen and (min-width: 33.9em) { 
+  .headtext h1{
+    font-size: 1.7em;
+  }
+}
+@media only screen and (min-width: 47.9em) {
+  .headtext h1{
+    font-size: 1.8em;
+  }
+ }
+@media only screen and (min-width: 61.9em) {
+  .headtext h1{
+    font-size: 2.2em;
+  }
+}
+@media only screen and (min-width: 74.9em) { 
+  .headtext h1{
+    font-size: 2.5em;
+  }
+}

@@ -39,15 +39,6 @@ export class VillageComponent implements OnInit {
         }
     }
 
-/*     this.router.events.subscribe((evt) => {
-      if (!(evt instanceof NavigationEnd)){
-          return;
-      }
-      if(this.activeRoute.snapshot["_routerState"].url!="/loggedin/village"){
-        window.scrollTo(0, 0)
-      }
-    }); */
-
     //Subscribe to filter subject
     this.subscription = this.filterServ.getTerm().subscribe(message => { 
       this.filter = message.text; 
@@ -88,6 +79,7 @@ export class VillageComponent implements OnInit {
   }
 
   onScroll() {
+    /** Infinite scroll event callback **/
     this.isLoading = true;
     this.page++;
     this.scrumbleGnomes(this.page);
@@ -108,12 +100,16 @@ export class VillageComponent implements OnInit {
       this.scrumbleGnomes(0);
 
       console.log("ALL THE GNOMES : " , this.people);
+    },
+    err => {
+        console.log(err );
     });
 
     return this.people;
   }
 
   ngOnDestroy() {
+    /** Unsubscribe to active observables **/
     if(this.disposeObs){
       this.disposeObs.unsubscribe();
     }
